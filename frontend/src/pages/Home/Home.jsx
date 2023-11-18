@@ -1,9 +1,10 @@
 import React from 'react'
+import "./style.scss"
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home page</h1>
+    <div className='home_page'>
+      <h1 className='child'>Home page</h1>
     </div>
   )
 }

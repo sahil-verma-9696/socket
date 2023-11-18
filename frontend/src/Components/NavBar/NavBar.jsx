@@ -1,10 +1,11 @@
+import "./style.scss"
 import { Link } from 'react-router-dom'
 
 const NavBar = ({ user, login, logout }) => {
     return (
-        <div>
+        <nav>
             <div className="workingArea">
-                <h1>Logo</h1>
+                <Link to={"/"}className="logo">Sandesh</Link>
                 <div className="links">
                     <Link to={"/dashboard"}>Dashboard</Link>
                     <Link to={"/registration"}>Registration</Link>
@@ -17,7 +18,7 @@ const NavBar = ({ user, login, logout }) => {
 
                 </div>
             </div>
-        </div>
+        </nav>
     )
 }
 

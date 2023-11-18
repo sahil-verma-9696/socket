@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home_page{
+   width: 100vw;
+   height: 100vh;
+   background-color: rgb(245, 244, 245);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

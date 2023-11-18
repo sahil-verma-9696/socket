@@ -1,3 +1,4 @@
+import "./App.css"
 import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -26,7 +27,7 @@ function App() {
 
 
   return (
-    <>
+    <div className='app_page'>
       <Router>
         <NavBar user={user} login={login} logout={logout} />
         <Routes>
@@ -38,7 +39,7 @@ function App() {
           } />
         </Routes>
       </Router>
-    </>
+    </div>
   )
 }
 
