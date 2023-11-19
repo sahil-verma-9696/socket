@@ -36,7 +36,7 @@ const Registration = async (req, res) => {
         const newRegisteredUser = await newUser.save();
 
         if (newRegisteredUser) {
-            return res.status(201).json(newRegisteredUser); // 201: Created
+            return res.status(201).json({newRegisteredUser : newRegisteredUser,message:"Registration successfull"}); // 201: Created
         } else {
             return res.status(500).json({ message: "Failed to register user" });
         }
