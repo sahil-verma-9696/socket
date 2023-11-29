@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Registration from './pages/Registration/Registration';
 import IsUserLogin from './Authorization/IsUserLogin'
 import Login from './pages/Login/Login';
+import axios from "axios";
 
 function App() {
   const [user, setUser] = useState(false);
@@ -20,9 +21,13 @@ function App() {
     setUser(true);
   }
 
+
+  axios.defaults.withCredentials = true;
   //* create logout Funtion
-  const logout = () => {
-    setUser(false);
+  const logout = async () => {
+    const url = `http://localhost:4000/logout`
+    const response = await axios.post(url);
+    console.log(response);
   }
 
 
@@ -44,5 +49,3 @@ function App() {
 }
 
 export default App
-
-//* Create Protected Route Function 

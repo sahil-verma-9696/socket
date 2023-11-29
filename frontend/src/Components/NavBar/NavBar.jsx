@@ -10,9 +10,9 @@ const NavBar = ({ user, login, logout }) => {
                     <Link to={"/dashboard"}>Dashboard</Link>
                     <Link to={"/registration"}>Registration</Link>
                     {user ?
-                        <button onClick={logout}>Logout</button>
+                        <Link className="btn" onClick={logout}>Logout</Link>
                         :
-                        <button onClick={login}>Login</button>
+                        <Link className="btn" onClick={login}  to={"/login"}>Login</Link>
                     }
 
 

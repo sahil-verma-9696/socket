@@ -28,7 +28,7 @@ nav {
                 color: white;
             }
 
-            button {
+            .btn {
 
                 font-size: 22px;
                 font-weight: bolder;
@@ -36,6 +36,7 @@ nav {
                 border-radius: 10px;
                 outline: none;
                 cursor: pointer;
+                background-color: white;
             }
         }
     }

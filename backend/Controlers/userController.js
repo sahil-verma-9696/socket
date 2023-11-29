@@ -68,7 +68,7 @@ const Login = async (req, res) => {
             // Password is valid
             req.session.authUser = user;
             const result = await User.updateOne({ _id: user._id }, { $set: { status: true } });
-            result ? res.status(200).json(user) : res.status(400).json({ message: "Status not updated" });
+            result ? res.status(200).json(req.session.authUser) : res.status(400).json({ message: "Status not updated" });
         } else {
             return res.status(401).json({ message: "Invalid password" });
         }
@@ -98,7 +98,9 @@ const Logout = async (req, res) => {
             return res.status(500).json({ message: "Error updating status" });
         }
 
-        req.session.destroy();
+        const response = req.session.destroy();
+        res.clearCookie('connect.sid');
+        console.log(response);
         return res.status(200).json({ message: "Logout successful", username: username, _id: _id, status: status });
 
     } catch (error) {

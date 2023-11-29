@@ -14,7 +14,11 @@ const app = express();
 connectDB(database);
 
 //middlewares
-app.use(corse());
+app.use(corse({
+  origin : ["http://localhost:3000"],
+  methods : ["POST","GET"],
+  credentials : true
+}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(session({ saveUninitialized: false, resave: false, secret: "secret" }));

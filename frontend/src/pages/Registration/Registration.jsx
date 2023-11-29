@@ -41,10 +41,10 @@ function Registration() {
       setResponse({ response: response, message: data.message });
     }
 
-
+ 
 
   return(
-    <div className = 'page' >
+    <div className = 'registration_page' >
       <Response response={response} />
       <div className="container">
         <div className="registrationSection">
